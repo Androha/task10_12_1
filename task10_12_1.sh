@@ -126,13 +126,13 @@ virsh net-start management
 
 #Creating disks and ISOs
 
-wget -O /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 ${VM_BASE_IMAGE}
-mkdir -p /var/lib/libvirt/images/vm1
-mkdir -p /var/lib/libvirt/images/vm2
-cp /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 /var/lib/libvirt/images/vm1/vm1.qcow2
-cp /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 /var/lib/libvirt/images/vm2/vm2.qcow2
-mkisofs -o "/var/lib/libvirt/images/vm1/config-vm1.iso" -V cidata -r -J $dname/config-drives/vm1-config
-mkisofs -o "/var/lib/libvirt/images/vm2/config-vm2.iso" -V cidata -r -J $dname/config-drives/vm2-config
+#mkdir -p /var/lib/libvirt/images/vm1
+#mkdir -p /var/lib/libvirt/images/vm2
+#wget -O /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 ${VM_BASE_IMAGE}
+#cp /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 /var/lib/libvirt/images/vm1/vm1.qcow2
+#cp /var/lib/libvirt/images/ubuntu-server-16.04.qcow2 /var/lib/libvirt/images/vm2/vm2.qcow2
+mkisofs -o "$VM1_CONFIG_ISO" -V cidata -r -J $dname/config-drives/vm1-config
+mkisofs -o "$VM2_CONFIG_ISO"" -V cidata -r -J $dname/config-drives/vm2-config
 
 #Making VMs
 #VM1
